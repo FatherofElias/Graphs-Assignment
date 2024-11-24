@@ -50,7 +50,10 @@ def dijkstra(graph, start_vertex):
 
     return distances, predecessors
 
-# Example usage:
+# Task 3 Test Cases
+
+# Test Case 1 Simple Graph 
+
 graph = Graph()
 graph.add_vertex('A')
 graph.add_vertex('B')
@@ -63,6 +66,49 @@ graph.add_edge('B', 'D', 5)
 graph.add_edge('C', 'D', 1)
 
 distances, predecessors = dijkstra(graph, 'A')
-
+print("Test Case 1:")
 print("Shortest path distances:", distances)
 print("Shortest path predecessors:", predecessors)
+
+
+# Test Case 2 Larger Graph
+
+graph = Graph()
+graph.add_vertex('A')
+graph.add_vertex('B')
+graph.add_vertex('C')
+graph.add_vertex('D')
+graph.add_vertex('E')
+graph.add_vertex('F')
+graph.add_edge('A', 'B', 2)
+graph.add_edge('A', 'C', 1)
+graph.add_edge('B', 'D', 5)
+graph.add_edge('B', 'E', 2)
+graph.add_edge('C', 'F', 8)
+graph.add_edge('D', 'E', 3)
+graph.add_edge('E', 'F', 1)
+
+distances, predecessors = dijkstra(graph, 'A')
+print("Test Case 2:")
+print("Shortest path distances:", distances)
+print("Shortest path predecessors:", predecessors)
+
+# Test Case 3 Disconnected Graph
+
+graph = Graph()
+graph.add_vertex('A')
+graph.add_vertex('B')
+graph.add_vertex('C')
+graph.add_vertex('D')
+graph.add_vertex('E')
+graph.add_edge('A', 'B', 3)
+graph.add_edge('A', 'C', 5)
+graph.add_edge('B', 'C', 1)
+graph.add_edge('C', 'D', 2)
+
+distances, predecessors = dijkstra(graph, 'A')
+print("Test Case 3:")
+print("Shortest path distances:", distances)
+print("Shortest path predecessors:", predecessors)
+
+
