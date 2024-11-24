@@ -118,3 +118,48 @@ print("Shortest path distances:", distances)
 print("Shortest path predecessors:", predecessors)
 
 
+# Task 4
+
+# *Time and Space Complexity Analysis*
+
+# ~Time Complexity~ 
+
+# Initialization:
+# Initializing the distances dictionary and the predecessors dictionary takes 𝑂(𝑉) time, where 𝑉 is the number of vertices.
+
+# Finding Minimum Distance Vertex:
+# Each time we need to find the vertex with the smallest distance from the list of vertices to explore, it takes 𝑂(𝑉) time. 
+# Since we do this for each vertex, the total time for these operations is 𝑂(𝑉^2).
+
+# Edge Relaxation:
+# For each vertex, we look at all its adjacent vertices (edges). 
+# This operation is performed for each edge once, resulting in a total time of 𝑂(𝐸), where 𝐸 is the number of edges.
+# Combining these, the overall time complexity is: 𝑂(𝑉^2+𝐸)
+
+
+# ~Space Complexity~
+
+# Distances Dictionary:
+# Requires 𝑂(𝑉) space to store the shortest distance for each vertex.
+
+# Predecessors Dictionary:
+# Requires 𝑂(𝑉) space to store the predecessor for each vertex.
+
+# Graph Representation (Adjacency List):
+# Requires 𝑂(𝑉+𝐸) space to store the graph.
+# Combining these, the overall space complexity is:𝑂(𝑉+𝐸)
+
+
+# ~Insights into Efficiency and Optimization~
+
+# Efficiency:
+# This implementation is simple but less efficient, especially for dense graphs with a large number of vertices. 
+# The 𝑂(𝑉2+𝐸) time complexity can be prohibitive for large graphs.
+
+# Optimization Opportunity:
+# The primary inefficiency lies in the time complexity of finding the minimum distance vertex. 
+# This operation can be optimized by using a more efficient data structure such as a priority queue.
+
+# ~Potential Optimization~
+# Using a priority queue (like heapq) can significantly improve the efficiency of Dijkstra's algorithm by reducing the time complexity to 𝑂((𝑉+𝐸)log𝑉). 
+# This is because finding and updating the minimum distance vertex can be done in 𝑂(log⁡𝑉) time using a priority queue.
